@@ -3,7 +3,7 @@ var router = express.Router();
 var mongoose = require('mongoose');
 
 // our db models
-var Person = require("../models/person.js");
+var Survey = require("../models/coffee.js");
 var Course = require("../models/course.js");
 
 // S3 File dependencies
@@ -32,7 +32,7 @@ router.get('/', function(req, res) {
   console.log('home page requested!');
 
   var jsonData = {
-  	'name': 'itp-directory',
+  	'name': 'coffee-survey',
   	'api-status':'OK'
   }
 
@@ -47,9 +47,9 @@ router.get('/', function(req, res) {
 
 });
 
-router.get('/add-person', function(req,res){
+router.get('/survey', function(req,res){
 
-  res.render('add.html')
+  res.render('survey.html')
 
 })
 
@@ -70,7 +70,7 @@ router.get('/edit/:id', function(req,res){
 
   var requestedId = req.params.id;
 
-  Person.findById(requestedId,function(err,data){
+  Survey.findById(requestedId,function(err,data){
     if(err){
       var error = {
         status: "ERROR",
@@ -83,7 +83,7 @@ router.get('/edit/:id', function(req,res){
 
     var viewData = {
       pageTitle: "Edit " + data.name,
-      person: data
+      survey: data
     }
 
     res.render('edit.html',viewData);
@@ -91,16 +91,6 @@ router.get('/edit/:id', function(req,res){
   })
 
 })
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -133,21 +123,35 @@ router.post('/api/create', function(req,res){
 
   console.log(req.body);
 
-  var personObj = {
-    name: req.body.name,
-    itpYear: req.body.itpYear,
-    interests: req.body.interests.split(','),
-    link: req.body.link,
-    imageUrl: req.body.imageUrl,
-    slug : req.body.name.toLowerCase().replace(/[^\w ]+/g,'').replace(/ +/g,'-')
+  var surveyObj = {
+    cupsPerWeek: req.body.cupsPerWeek,
+    coffeeShop: req.body.coffeeShop
+    // interests: req.body.interests.split(','),
+    // link: req.body.link,
+    // imageUrl: req.body.imageUrl,
+    // slug : req.body.name.toLowerCase().replace(/[^\w ]+/g,'').replace(/ +/g,'-')
   }
 
-  if (req.body.hasGlasses == 'yes') personObj['hasGlasses'] = true;
-  else personObj['hasGlasses'] = false;
+   if (req.body.coffeeShop == 'Starbucks') surveyObj['coffeeShop'] = 'Starbucks';
+  // else surveyObj['coffeeShop'] = false;
+  if (req.body.coffeeShop == 'Think Coffee') surveyObj['coffeeShop'] = 'Think Coffee';
+  // else surveyObj['coffeeShop'] = false;
+  if (req.body.coffeeShop == 'Hungry Ghost') surveyObj['coffeeShop'] = 'Hungry Ghost';
+  // else surveyObj['coffeeShop'] = false;
+    if (req.body.coffeeShop == 'Orens') surveyObj['coffeeShop'] = 'Orens';
+  // else surveyObj['coffeeShop'] = false;
+      if (req.body.coffeeShop == 'Dunkin Donuts') surveyObj['coffeeShop'] = 'Dunkin Donuts';
+  // else surveyObj['coffeeShop'] = false;
+   if(req.body.coffeeShop == 'at home') surveyObj['coffeeShop'] = 'at home';
+  // else surveyObj['coffeeShop'] = false;
 
-  var person = new Person(personObj);
 
-  person.save(function(err,data){
+  if (req.body.knowRecycleQuery == 'yes') surveyObj['knowRecycleQuery'] = true;
+  else surveyObj['knowRecycleQuery'] = false;
+
+  var survey = new Survey(surveyObj);
+
+  survey.save(function(err,data){
     if(err){
       var error = {
         status: "ERROR",
@@ -158,7 +162,7 @@ router.post('/api/create', function(req,res){
 
     var jsonData = {
       status: "OK",
-      person: data
+      survey: data
     }
 
     return res.json(jsonData);
@@ -172,18 +176,18 @@ router.post('/api/edit/:id', function(req,res){
   console.log(req.body);
   var requestedId = req.params.id;
 
-  var personObj = {
-    name: req.body.name,
-    itpYear: req.body.itpYear,
-    interests: req.body.interests.split(','),
-    link: req.body.link,
-    imageUrl: req.body.imageUrl,
-    slug : req.body.name.toLowerCase().replace(/[^\w ]+/g,'').replace(/ +/g,'_')
+ var surveyObj = {
+    cupsPerWeek: req.body.cupsPerWeek,
+    coffeeShop: req.body.coffeeShop,
+    // interests: req.body.interests.split(','),
+    // link: req.body.link,
+    // imageUrl: req.body.imageUrl,
+    // slug : req.body.name.toLowerCase().replace(/[^\w ]+/g,'').replace(/ +/g,'-')
   }
 
-  console.log(personObj);
+  console.log(surveyObj);
 
-  Person.findByIdAndUpdate(requestedId,personObj,function(err,data){
+  Survey.findByIdAndUpdate(requestedId,surveyObj,function(err,data){
     if(err){
       var error = {
         status: "ERROR",
@@ -194,7 +198,7 @@ router.post('/api/edit/:id', function(req,res){
 
     var jsonData = {
       status: "OK",
-      person: data
+      survey: data
     }
 
     //return res.json(jsonData);
@@ -210,7 +214,7 @@ router.post('/api/create/image', multipartMiddleware, function(req,res){
   console.log('the incoming data >> ' + JSON.stringify(req.body));
   console.log('the incoming image file >> ' + JSON.stringify(req.files.image));
 
-  var personObj = {
+  var surveyObj = {
     name: req.body.name,
     itpYear: req.body.itpYear,
     interests: req.body.interests.split(','),
@@ -218,8 +222,8 @@ router.post('/api/create/image', multipartMiddleware, function(req,res){
     slug : req.body.name.toLowerCase().replace(/[^\w ]+/g,'').replace(/ +/g,'-')
   }
 
-  if (req.body.hasGlasses == 'yes') personObj['hasGlasses'] = true;
-  else personObj['hasGlasses'] = false;
+  if (req.body.hasGlasses == 'yes') surveyObj['hasGlasses'] = true;
+  else surveyObj['hasGlasses'] = false;
 
 
   // NOW, we need to deal with the image
@@ -260,10 +264,10 @@ router.post('/api/create/image', multipartMiddleware, function(req,res){
 
         // now that we have the image
         // we can add the s3 url our person object from above
-        personObj['imageUrl'] = s3Path + cleanedFileName;
+        surveyObj['imageUrl'] = s3Path + cleanedFileName;
 
         // now, we can create our person instance
-        var person = new Person(personObj);
+        var person = new Person(surveyObj);
 
         person.save(function(err,data){
           if(err){

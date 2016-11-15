@@ -11,20 +11,20 @@ function renderPeeps(){
 		success : function(response) {
 			console.log(response);
 
-			var people = response.people;
+			var coffee = response.coffee;
 
-			for(var i=0;i<people.length;i++){
+			for(var i=0;i<coffee.length;i++){
 				var htmlToAdd = '<div class="col-md-4">'+
-					'<img src='+people[i].imageUrl+' width="100">'+
-					'<h1>'+people[i].name+'</h1>'+
+					'<img src='+coffee[i].imageUrl+' width="100">'+
+					'<h1>'+coffee[i].name+'</h1>'+
 					'<ul>'+
-						'<li>Year: '+people[i].itpYear+'</li>'+
-						'<li>Interests: '+people[i].interests+'</li>'+
+						'<li>Year: '+coffee[i].itpYear+'</li>'+
+						'<li>Interests: '+coffee[i].interests+'</li>'+
 					'</ul>'+
-					'<a href="/edit/'+people[i]._id+'">Edit Person</a>'+
+					'<a href="/edit/'+coffee[i]._id+'">Edit Person</a>'+
 				'</div>';
 			
-				jQuery("#people-holder").append(htmlToAdd);
+				jQuery("#coffee-holder").append(htmlToAdd);
 			}
 
 
