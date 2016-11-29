@@ -1,10 +1,10 @@
 // CUSTOM JS FILE //
 
 function init() {
-  renderResult();
+  renderResultAll();
 }
 
-function renderResult(){
+function renderResultAll(){
 	jQuery.ajax({
 		url : '/api/get',
 		dataType : 'json',
@@ -15,7 +15,7 @@ function renderResult(){
 
 			for(var i=0;i<coffee.length;i++){
 				var htmlToAdd = '<div class="col-md-2">'+
-					'<h1>'+coffee[i].coffeeShop+'</h1>'+
+					'<h1>'+"how many people answered?"+coffee[i].coffeeShop+'</h1>'+
 					'<ul>'+
 						'<li>How many cups: '+coffee[i].cupsPerWeek+'</li>'+
 						'<li>Did you know?: '+coffee[i].knowRecycleQuery+'</li>'+

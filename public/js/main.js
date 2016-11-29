@@ -13,7 +13,7 @@ function renderPeeps(){
 
 			var coffee = response.coffee;
 
-			for(var i=0;i<coffee.length;i++){
+			for(var i=0; i<coffee.length; i++){
 				if (coffee[i].name === 'Starbucks') {
 					var htmlToAdd = '<div class="col-md-4">'+
 						'<img src='+coffee[i-1].imageUrl+' width="100">'+

@@ -60,6 +60,12 @@ router.get('/result', function(req,res){
 })
 
 
+router.get('/resultall', function(req,res){
+
+  res.render('survey_result_all.html')
+
+})
+
 
 // router.get('/edit/:id', function(req,res){
 
@@ -167,6 +173,15 @@ router.post('/api/create', function(req,res){
   })
 
 })
+
+
+
+
+
+
+
+
+
 
 // router.post('/api/edit/:id', function(req,res){
 

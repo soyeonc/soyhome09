@@ -83,8 +83,42 @@ jQuery().submit(function(e){
 	// prevents the form from submitting normally
   e.preventDefault();
   return false;
-
 });
+
+
+jQuery().submit(function(e){
+
+	// POST the data from above to our API create route
+  jQuery.ajax({
+  	url : '/api/create',
+  	dataType : 'json',
+  	type : 'POST',
+  	// we send the data in a data object (with key/value pairs)
+  	data : {
+  		cupsPerWeek : cupsPerWeek,
+  		coffeeShop : coffeeShop,
+  		knowRecycleQuery : knowRecycleQuery
+  	},
+  	success : function(response){
+  		// success
+  		console.log(response);
+
+  		// redirect the user once we get a response
+  		window.location.href = "/resultall";
+  	},
+
+  	error : function(err){
+  		// do error checking
+  		alert("something went wrong");
+  		console.error(err);
+  	}
+  });
+
+	// prevents the form from submitting normally
+  e.preventDefault();
+  return false;
+});
+
 
 // step 1 - the user chooses a number of cups
 

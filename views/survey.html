@@ -7,11 +7,9 @@
     <title>Coffee Survey</title>
 
     <!-- Custom Font - Change 'Muli' to the font you want -->
-    <link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
-
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
     <!-- Custom CSS inside CSS folder -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -23,40 +21,48 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
 
+        <body>
+        <div class="container">
+          <div class="row">
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8">
-        <h1>Your coffee habit </h1>
+             <div id="nav">
+              <img class="logo" src="img/logo_277x40_w.png"><p class="menu">
+              <a href=#>your impact</a> &ensp; &emsp;
+              <a href=survey_result_all.html>our impact</a>&ensp; &emsp;
+              <a href=#>coffee fact</a> &ensp; &emsp;  
+              <a href=#>about</a></p1> 
+            </div>
+
         <div id="section1">
             <div class="form-group">
-              <label for="cupsPerWeek">On average, how many cups of Coffee do you drink per week?  </label> <br>
+              <label for="cupsPerWeek">On average, how many cups of Coffee do you drink per week?  </label> <br><br>
 
-              <img class="coffeeImg" src="img/cup_29x40.png" width="29" height="40" id="cupsPerWeek" onclick="getCups(event)" name="cupsPerWeek" data-value="1" required>
+              <img class="coffeeImg" src="img/cupempty_0.png"  id="cupsPerWeek" onclick="getCups(event)" name="cupsPerWeek" data-value="0" required>
 
-               <img class="coffeeImg" src="img/cup_29x40.png" width="29" height="40" id="cupsPerWeek2" onclick="getCups(event)" name="cupsPerWeek" data-value="2" required>
+               <img class="coffeeImg" src="img/cupempty_1.png"  id="cupsPerWeek2" onclick="getCups(event)" name="cupsPerWeek" data-value="1" required>
 
-               <img class="coffeeImg" src="img/cup_29x40.png" width="29" height="40" id="cupsPerWeek3" onclick="getCups(event)" name="cupsPerWeek" data-value="3" required>
+               <img class="coffeeImg" src="img/cupempty_2.png"  id="cupsPerWeek3" onclick="getCups(event)" name="cupsPerWeek" data-value="2" required>
 
-               <img class="coffeeImg" src="img/cup_29x40.png" width="29" height="40" id="cupsPerWeek3" onclick="getCups(event)" name="cupsPerWeek" data-value="4" required>
+               <img class="coffeeImg" src="img/cupempty_3.png"  id="cupsPerWeek3" onclick="getCups(event)" name="cupsPerWeek" data-value="3" required>
              
-                <img class="coffeeImg" src="img/cup_29x40.png" width="29" height="40" id="cupsPerWeek3" onclick="getCups(event)" name="cupsPerWeek" data-value="5" required>
+                <img class="coffeeImg" src="img/cupempty_4.png"  id="cupsPerWeek3" onclick="getCups(event)" name="cupsPerWeek" data-value="4" required>
+
+                <img class="coffeeImg" src="img/cupempty_5.png"  id="cupsPerWeek3" onclick="getCups(event)" name="cupsPerWeek" data-value="5" required>
   <!-- <input type="image" class="form-control" src="img/cup_29x40.png" id="cupsPerWeek" placeholder="cups per week" name="cupsPerWeek" value="1" required> -->
   <!-- <input type="image" src="img_submit.gif" alt="Submit" width="48" height="48"> -->
 
-               <br>
-                <button onclick="goToSection('#section2')">Next</button>
+               <br><br><br>
+                <button id="next" onclick="goToSection('#section2')">NEXT</button>
 
             </div><br>
-          </div>
+
           <div id="section2">
             <div class="form-group">
               <label for="coffeeShop">Where do you usually buy Coffee from around the Tisch Building? </label>
-                <br> 
-              <div id="radioHolder">
-              <p id="coffeeShop" onclick="getCoffeeShop(event)" name="coffeeShop" data-value2="Starbucks" required>Starbucks</p>
+                <br> <br>
+              <div id="coffeeShops">
+              <p class="coffeeShop" id="coffeeShop" onclick="getCoffeeShop(event)" name="coffeeShop" data-value2="Starbucks" required>Starbucks</button>
 
               <p id="coffeeShop" onclick="getCoffeeShop(event)" name="coffeeShop" data-value2="Think Coffee" required>Think Coffee</p>
 
@@ -67,25 +73,24 @@
               <p id="coffeeShop" onclick="getCoffeeShop(event)" name="coffeeShop" data-value2="Fresh-Co." required>Fresh-Co.</p>
 
               <p id="coffeeShop" onclick="getCoffeeShop(event)" name="coffeeShop" data-value2="at home" required>I brew at home</p>
-             
-                         
+                           
               </div>                                   
-               <br>
-               <button onclick="goToSection('#section3')">Next</button>
+               <br><br><br>
+               <button id="next" onclick="goToSection('#section3')">NEXT</button>
             </div>
           </div>
 
             <div id="section3">
              <label for="KnowRecycleQuery">Do you know that coffee grounds can be recycled? </label>
-             <br> 
+             <br> <br> <br> 
              <div id="recycleHolder">             
-                <button onclick="getRecycleQuery(event)" name="knowRecycleQuery" data-value3="yes">&ensp;Yes &emsp;</button>
-                <button onclick="getRecycleQuery(event)" name="knowRecycleQuery" data-value3="no">&ensp;No &emsp;</button>
+                <button onclick="getRecycleQuery(event)" name="knowRecycleQuery" data-value3="yes">Yes </button> &emsp;
+                <button onclick="getRecycleQuery(event)" name="knowRecycleQuery" data-value3="no">&ensp;No </button>
 
                 <!-- <input type="radio" name="knowRecycleQuery" value="no">&ensp; No -->
               </div>
-              <br><br>     
-          <button type="submit" class="btn btn-default">Submit</button>
+              <br><br><br><br><br>       
+          <button type="submit" class="btn btn-default">SUBMIT</button>
       </div>
     </div>
   </div>
@@ -95,7 +100,6 @@
 
     <!-- JQuery script -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
-
     <!-- JQuery validate -->
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
 
