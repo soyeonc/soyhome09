@@ -136,33 +136,34 @@ router.post('/api/create', function(req,res){
   console.log(req.body);
 
   var surveyObj = {
-    // cupsPerWeek: req.body.cupsPerWeek,
-    // coffeeShop: req.body.coffeeShop
+    cupsPerWeek: req.body.cupsPerWeek,
+    coffeeShop: req.body.coffeeShop,
+    knowRecycleQuery: req.body.knowRecycleQuery
     // interests: req.body.interests.split(','),
     // link: req.body.link,
     // imageUrl: req.body.imageUrl,
     // slug : req.body.name.toLowerCase().replace(/[^\w ]+/g,'').replace(/ +/g,'-')
   }
-  if (req.body.cupsPerWeek == '1') surveyObj['cupsPerWeek'] = '1';
-  if (req.body.cupsPerWeek == '2') surveyObj['cupsPerWeek'] = '2';
-  if (req.body.cupsPerWeek == '3') surveyObj['cupsPerWeek'] = '3';
+  // if (req.body.cupsPerWeek == '1') surveyObj['cupsPerWeek'] = '1';
+  // if (req.body.cupsPerWeek == '2') surveyObj['cupsPerWeek'] = '2';
+  // if (req.body.cupsPerWeek == '3') surveyObj['cupsPerWeek'] = '3';
 
-  if (req.body.coffeeShop == 'Starbucks') surveyObj['coffeeShop'] = 'Starbucks';
-  // else surveyObj['coffeeShop'] = false;
-  if (req.body.coffeeShop == 'Think Coffee') surveyObj['coffeeShop'] = 'Think Coffee';
-  // else surveyObj['coffeeShop'] = false;
-  if (req.body.coffeeShop == 'Hungry Ghost') surveyObj['coffeeShop'] = 'Hungry Ghost';
-  // else surveyObj['coffeeShop'] = false;
-  if (req.body.coffeeShop == 'Orens') surveyObj['coffeeShop'] = 'Orens';
-  // else surveyObj['coffeeShop'] = false;
-  if (req.body.coffeeShop == 'Dunkin Donuts') surveyObj['coffeeShop'] = 'Dunkin Donuts';
-  // else surveyObj['coffeeShop'] = false;
-  if(req.body.coffeeShop == 'at home') surveyObj['coffeeShop'] = 'at home';
-  // else surveyObj['coffeeShop'] = false;
+  // if (req.body.coffeeShop == 'Starbucks') surveyObj['coffeeShop'] = 'Starbucks';
+  // // else surveyObj['coffeeShop'] = false;
+  // if (req.body.coffeeShop == 'Think Coffee') surveyObj['coffeeShop'] = 'Think Coffee';
+  // // else surveyObj['coffeeShop'] = false;
+  // if (req.body.coffeeShop == 'Hungry Ghost') surveyObj['coffeeShop'] = 'Hungry Ghost';
+  // // else surveyObj['coffeeShop'] = false;
+  // if (req.body.coffeeShop == 'Orens') surveyObj['coffeeShop'] = 'Orens';
+  // // else surveyObj['coffeeShop'] = false;
+  // if (req.body.coffeeShop == 'Dunkin Donuts') surveyObj['coffeeShop'] = 'Dunkin Donuts';
+  // // else surveyObj['coffeeShop'] = false;
+  // if(req.body.coffeeShop == 'at home') surveyObj['coffeeShop'] = 'at home';
+  // // else surveyObj['coffeeShop'] = false;
 
 
-  if (req.body.knowRecycleQuery == 'yes') surveyObj['knowRecycleQuery'] = true;
-  else surveyObj['knowRecycleQuery'] = false;
+  // if (req.body.knowRecycleQuery == 'yes') surveyObj['knowRecycleQuery'] = true;
+  // else surveyObj['knowRecycleQuery'] = false;
 
   var survey = new Survey(surveyObj);
 

@@ -76,6 +76,22 @@ document.getElementById("coffeeShop").style.background = "white";
 // document.body.style.background = "white";
 }
 
+
+function setColor(id, color){
+    var count=1;
+    var property = document.getElementById(id);
+    if (count == 0){
+        property.style.backgroundColor = "transparent"
+        property.style.color = "#ffffff"
+        count=1;        
+    }
+    else{
+        property.style.backgroundColor = "#ffffff"
+        property.style.color = "#261506"
+        count=0;
+    }
+}
+
 // 
 function goToSectionb(){
     if (event.target.dataset.value2=="at home") {
