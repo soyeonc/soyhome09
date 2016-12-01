@@ -10,12 +10,11 @@ function renderResultAll(){
 		dataType : 'json',
 		success : function(response) {
 			console.log(response);
-
 			var coffee = response.coffee;
 
 			for(var i=0;i<coffee.length;i++){
 				var htmlToAdd = '<div class="col-md-2">'+
-					'<h1>'+"how many people answered?"+coffee[i].coffeeShop+'</h1>'+
+					'<h1>'+coffee.length+'</h1>'+ "people participated in this survey."
 					'<ul>'+
 						'<li>How many cups: '+coffee[i].cupsPerWeek+'</li>'+
 						'<li>Did you know?: '+coffee[i].knowRecycleQuery+'</li>'+
@@ -24,9 +23,6 @@ function renderResultAll(){
 			
 				jQuery("#coffee-holder").append(htmlToAdd);
 			}
-
-
-
 		}
 	})	
 }

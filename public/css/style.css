@@ -1,6 +1,10 @@
 /**************/
 /* Custom CSS */
 /**************/
+body{
+margin:0;
+}
+
 a  {
 color:white;
 }
@@ -10,42 +14,41 @@ a:active {
     text-decoration: none;
 }
 
-/*a:hover {
+a:hover {
     color: white;
     text-decoration: none;
-}*/
+}
+
+a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+#nav {
+	position: fixed;
+	width: 100%;
+	height:66px;
+	background-color: #201000;
+	margin:0;
+	top:0;
+	overflow: hidden;
+}
+
+
 p.menu{
 	font-family: Raleway, arial;
 	font-size: 9pt;
-
+	text-transform: uppercase;
+	font-weight: light;
+	letter-spacing: 2.7px;
 }
 
-
-
-
-
-#nav {
-	width: 100%;
-	height:70px;
-	background-color: #261506;
-	margin:0 0 0 0;
-}
-
-
-.container{
-
-font-family: Raleway, arial;
-font-size: 12pt;
-text-transform: uppercase;
-letter-spacing: 2.7px;
-color:rgb(255,255,255);
-}
 
 
 .logo{
 	/*vertical-align: middle;*/
-padding-top:14px;
-padding-left: 25px;
+padding-top:12px;
+padding-left: 20px;
 float: left;
 }
 
@@ -57,52 +60,170 @@ padding-right: 25px;
 }
 
 
+.mainPage{
+
+font-family: Raleway, arial;
+font-size: 13pt;
+text-transform: uppercase;
+font-weight: lighter;
+letter-spacing: 2.7px;
+color:rgb(255,255,255);
+}
+
+
+#section1 {
+	padding-top:40vh;
+	height:100vh;
+	text-align: center;
+	background-color: #43270E;
+}
+
 .coffeeImg{
 	cursor: pointer;
 	margin-right: 20px;
 }
 
 
-p.coffeeShop{
-	cursor: pointer;
-	fill: transparent;
-	border-color: white;
-	border-style: solid;
-
-}
-
-#section1 {
-	padding-top:35vh;
-	height:100vh;
-	text-align: center;
-	background-color: #43270E;
-}
-
 #section2 {
-	padding-top:40vh;
+	padding-top:30vh;
 	height:100vh;
 	text-align: center;
 	background-color: #261506;
 }
 
+#coffeeShops{
+margin:auto;
+width:60%;
+height: 30%;
+/*padding:20px;*/
+}
+
+#coffeeShop{
+	display:inline;
+	font-size: 12px;
+	width: 180px;
+	height: 38px;
+	margin-right: 18px;
+	margin-top: 10px;
+	padding-top: 10px;
+	cursor: pointer;
+	background: transparent;
+	border: 1px solid white;
+    border-radius: 5px;
+	float: left;
+}
+
+#coffeeShop:hover {
+	display:inline;
+	font-size: 12px;
+	color:#201000;
+	cursor: pointer;
+	background: white;
+	border: 1px solid white;
+    border-radius: 5px;
+	float: left;
+}
+
+/*p.coffeeShop:visited {
+	display:inline;
+	font-size: 12px;
+	color:#201000;
+	cursor: pointer;
+	background: white;
+	border: 1px solid white;
+    border-radius: 5px;
+	float: left;
+}*/
+
+#nextButton{
+margin-top:60px;
+width: 100%;
+}
+
+
+button.next{
+color: white;
+background-color: transparent;
+width: 240px;
+height: 40px;
+letter-spacing: 5px;
+}
+
 
 #section3 {
+	display:none;
 	padding-top:40vh;
 	height:100vh;
 	text-align: center;
 	background-color: #43270E;
 }
 
-button{
-color: white;
-background-color: transparent;
-width: 200px;
-height: 40px;
-
+#section3b {
+	display:none;
+	padding-top:40vh;
+	height:100vh;
+	text-align: center;
+	background-color: #43270E;
 }
 
-#coffeeShop{
-border-width: 140px;
-border: white;
+#yesnoHolder{
+	width: 600px;
+	height: 100px;
+margin:auto;
+
+/*padding:20px;*/
+}
+
+p.yesorno{
+	font-size: 12px;
+	width: 180px;
+	height: 38px;
+	margin-right: 28px;
+	margin-top: 9px;
+	padding-top: 9px;
+	cursor: pointer;
+	background: transparent;
+	border: 1px solid white;
+    border-radius: 5px;
+	float: left;
+}
+
+p.yesorno:hover {
+	color:#201000;
+	background-color: white;
+	border: 1px solid white;
+    border-radius: 5px;
+	float: left;
+}
+
+/*
+#next{
+
+	margin-top: 80px;
+	letter-spacing: 2.7px;
 
 }
+*/
+
+
+#section4 {
+	padding-top:100px;
+	padding-bottom:100px;
+	height:100%;
+	text-align: center;
+	background-color: #43270E;
+}
+
+/*//Coffee Fact PAge//------------------------------ */
+
+
+
+
+p.coffeeFact{
+	font-family: "Raleway", arial;
+	font-size: 18pt;
+	text-transform: uppercase;
+	font-weight: lighter;
+	letter-spacing: 2.7px;
+}
+

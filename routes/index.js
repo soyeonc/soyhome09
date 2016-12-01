@@ -53,9 +53,21 @@ router.get('/survey', function(req,res){
 
 })
 
+router.get('/about', function(req,res){
+
+  res.render('about.html')
+
+})
+
 router.get('/result', function(req,res){
 
   res.render('survey_result.html')
+
+})
+
+router.get('/coffeefact', function(req,res){
+
+  res.render('coffee_fact.html')
 
 })
 

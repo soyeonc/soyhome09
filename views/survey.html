@@ -23,78 +23,112 @@
   </head>
 
         <body>
-        <div class="container">
-          <div class="row">
+        
+         <!--  <div class="row"> -->
 
-             <div id="nav">
-              <img class="logo" src="img/logo_277x40_w.png"><p class="menu">
-              <a href=#>your impact</a> &ensp; &emsp;
-              <a href=survey_result_all.html>our impact</a>&ensp; &emsp;
-              <a href=#>coffee fact</a> &ensp; &emsp;  
-              <a href=#>about</a></p1> 
-            </div>
+           <div id="nav">
+                      <img class="logo" src="img/logo_277x40_w.png"><p class="menu">
+                      <a href=survey>your impact</a> &ensp; &emsp;
+                      <a href=resultall>our impact</a>&ensp; &emsp;
+                      <a href=coffeefact>coffee fact</a> &ensp; &emsp;  
+                      <a href="about">about</a>
+             </div>    
+
+     <div class="mainPage">    
 
         <div id="section1">
-            <div class="form-group">
+            <!-- <div class="form-group"> -->
               <label for="cupsPerWeek">On average, how many cups of Coffee do you drink per week?  </label> <br><br>
 
-              <img class="coffeeImg" src="img/cupempty_0.png"  id="cupsPerWeek" onclick="getCups(event)" name="cupsPerWeek" data-value="0" required>
+              <img class="coffeeImg" src="img/cupEmpty_0.png"  id="cupsPerWeek" onclick="getCups(event);replaceImg0(this)" name="cupsPerWeek" data-value="0" required>
 
-               <img class="coffeeImg" src="img/cupempty_1.png"  id="cupsPerWeek2" onclick="getCups(event)" name="cupsPerWeek" data-value="1" required>
+               <img class="coffeeImg" src="img/cupEmpty_1.png"  id="cupsPerWeek2" onclick="getCups(event);replaceImg1(this)" name="cupsPerWeek" data-value="1" required>
 
-               <img class="coffeeImg" src="img/cupempty_2.png"  id="cupsPerWeek3" onclick="getCups(event)" name="cupsPerWeek" data-value="2" required>
+               <img class="coffeeImg" src="img/cupEmpty_2.png"  id="cupsPerWeek3" onclick="getCups(event);replaceImg2(this)" name="cupsPerWeek" data-value="2" required>
 
-               <img class="coffeeImg" src="img/cupempty_3.png"  id="cupsPerWeek3" onclick="getCups(event)" name="cupsPerWeek" data-value="3" required>
+               <img class="coffeeImg" src="img/cupEmpty_3.png"  id="cupsPerWeek3" onclick="getCups(event);replaceImg3(this)" name="cupsPerWeek" data-value="3" required>
              
-                <img class="coffeeImg" src="img/cupempty_4.png"  id="cupsPerWeek3" onclick="getCups(event)" name="cupsPerWeek" data-value="4" required>
+                <img class="coffeeImg" src="img/cupEmpty_4.png"  id="cupsPerWeek3" onclick="getCups(event);replaceImg4(this)" name="cupsPerWeek" data-value="4" required>
 
-                <img class="coffeeImg" src="img/cupempty_5.png"  id="cupsPerWeek3" onclick="getCups(event)" name="cupsPerWeek" data-value="5" required>
+                <img class="coffeeImg" src="img/cupEmpty_5.png"  id="cupsPerWeek3" onclick="getCups(event);replaceImg5(this)" name="cupsPerWeek" data-value="5" required>
   <!-- <input type="image" class="form-control" src="img/cup_29x40.png" id="cupsPerWeek" placeholder="cups per week" name="cupsPerWeek" value="1" required> -->
   <!-- <input type="image" src="img_submit.gif" alt="Submit" width="48" height="48"> -->
 
-               <br><br><br>
-                <button id="next" onclick="goToSection('#section2')">NEXT</button>
+              <div id="nextButton"> 
+                <button class="next" onclick="goToSection('#section2')">NEXT</button>
+                </div>
 
-            </div><br>
+         </div>
 
-          <div id="section2">
-            <div class="form-group">
+     <div id="section2">
               <label for="coffeeShop">Where do you usually buy Coffee from around the Tisch Building? </label>
                 <br> <br>
-              <div id="coffeeShops">
-              <p class="coffeeShop" id="coffeeShop" onclick="getCoffeeShop(event)" name="coffeeShop" data-value2="Starbucks" required>Starbucks</button>
 
-              <p id="coffeeShop" onclick="getCoffeeShop(event)" name="coffeeShop" data-value2="Think Coffee" required>Think Coffee</p>
+          <div id="coffeeShops">
+              <p id="coffeeShop" onclick="getCoffeeShop(event);chBcolor();" name="coffeeShop" data-value2="Starbucks" required>Starbucks</p>
 
-              <p id="coffeeShop" onclick="getCoffeeShop(event)" name="coffeeShop" data-value2="Orens" required>Orens</p>
+              <p id="coffeeShop" onclick="getCoffeeShop(event);chBcolor();" name="coffeeShop" data-value2="Think Coffee" required>Think Coffee</p>
 
-              <p id="coffeeShop" onclick="getCoffeeShop(event)" name="coffeeShop" data-value2="Dunkin" required>Dunkin</p>
+              <p id="coffeeShop" onclick="getCoffeeShop(event);chBcolor();" name="coffeeShop" data-value2="Hungry Ghost" required>Hungry Ghost</p>
 
-              <p id="coffeeShop" onclick="getCoffeeShop(event)" name="coffeeShop" data-value2="Fresh-Co." required>Fresh-Co.</p>
+              <p id="coffeeShop" onclick="getCoffeeShop(event);chBcolor();" name="coffeeShop" data-value2="Dunkin" required>Dunkin' Donut</p>
 
-              <p id="coffeeShop" onclick="getCoffeeShop(event)" name="coffeeShop" data-value2="at home" required>I brew at home</p>
+              <p id="coffeeShop" onclick="getCoffeeShop(event);chBcolor();" name="coffeeShop" data-value2="Fresh-Co." required>Fresh-Co.</p>
+
+              <p id="coffeeShop" onclick="getCoffeeShop(event);chBcolor();" name="coffeeShop" data-value2="Orens" required>Oren's</p>
+
+              <p id="coffeeShop" onclick="getCoffeeShop(event);chBcolor();" name="coffeeShop" data-value2="La Colombe" required>La Colombe</p>
+
+              <p id="coffeeShop" onclick="getCoffeeShop(event);chBcolor();" name="coffeeShop" data-value2="coffee cart" required>Coffee Cart</p>
+
+              <p id="coffeeShop" onclick="getCoffeeShop(event);chBcolor();" name="coffeeShop" data-value2="mcdonald's" required>McDonald's</p>
+
+              <p id="coffeeShop" onclick="getCoffeeShop(event);chBcolor();" name="coffeeShop" data-value2="joe" required>Joe</p>
+
+              <p id="coffeeShop" onclick="getCoffeeShop(event);chBcolor();" name="coffeeShop" data-value2="pret a manger" required>pret a manger</p>
+
+              <p id="coffeeShop" onclick="getCoffeeShop(event);chBcolor();" name="coffeeShop" data-value2="at home" required>I brew at home</p>
                            
-              </div>                                   
-               <br><br><br>
-               <button id="next" onclick="goToSection('#section3')">NEXT</button>
-            </div>
+           </div>                                   
+              
+          <div id="nextButton">     
+               <button class="next" onclick="goToSectionb();">NEXT</button>
           </div>
+      </div>
+         
 
-            <div id="section3">
-             <label for="KnowRecycleQuery">Do you know that coffee grounds can be recycled? </label>
-             <br> <br> <br> 
-             <div id="recycleHolder">             
-                <button onclick="getRecycleQuery(event)" name="knowRecycleQuery" data-value3="yes">Yes </button> &emsp;
-                <button onclick="getRecycleQuery(event)" name="knowRecycleQuery" data-value3="no">&ensp;No </button>
+
+       <div id="section3">
+             <label for="KnowRecycleQuery">Did you know that coffee grounds can be recycled? </label>
+             
+             <div id="yesnoHolder">             
+                <p class="yesorno" onclick="getRecycleQuery(event)" name="knowRecycleQuery" data-value3="yes">YES </p> 
+                <p class="yesorno" onclick="getRecycleQuery(event)" name="knowRecycleQuery" data-value3="no">NO </p>
 
                 <!-- <input type="radio" name="knowRecycleQuery" value="no">&ensp; No -->
-              </div>
-              <br><br><br><br><br>       
-          <button type="submit" class="btn btn-default">SUBMIT</button>
+              </div><br><br>
+         <div id="nextButton">      
+          <button class="next" type="submit" class="btn btn-default" onclick="submitData()">SUBMIT</button>
+          </div>
+          </div>
+
+
+
+      <div id="section3b">
+             <label for="KnowRecycleQuery">Do you recycle coffee grounds? </label>
+             
+             <div id="yesnoHolder">             
+                <p class="yesorno" onclick="getRecycleQueryb(event)" name="knowRecycleQuery" data-value3b="yes">YES </p> 
+                <p class="yesorno" onclick="getRecycleQueryb(event)" name="knowRecycleQuery" data-value3b="no">NO </p>
+
+                <!-- <input type="radio" name="knowRecycleQuery" value="no">&ensp; No -->
+              </div><br><br>
+         <div id="nextButton">      
+          <button class="next" type="submit" class="btn btn-default">SUBMIT</button>
+          </div>
       </div>
+    
     </div>
-  </div>
-  </div></div>
   
 </body>
 

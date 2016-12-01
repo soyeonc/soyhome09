@@ -8,10 +8,11 @@ var knowRecycleQuery;
 
 var coffeeSchema = new Schema({
 	cupsPerWeek: Number,
-	coffeeShop: {
-        type: String,
-        enum: ['Starbucks', 'Think Coffee', 'Hungry Ghost', 'Orens', 'Dunkin Donuts','at home' ]
-      },
+	coffeeShop: String,
+	// coffeeShop: {
+ //        type: String,
+ //        enum: ['Starbucks', 'Think Coffee', 'Hungry Ghost', 'Orens', 'Dunkin Donuts','at home' ]
+ //      },
 	knowRecycleQuery: Boolean
 })
 
