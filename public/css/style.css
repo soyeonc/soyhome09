@@ -47,9 +47,12 @@ p.menu{
 
 .logo{
 	/*vertical-align: middle;*/
-padding-top:12px;
-padding-left: 20px;
+padding-top:17px;
+padding-left: 24px;
 float: left;
+max-width: 73%;
+max-height: 73%;
+
 }
 
 .menu{
@@ -79,10 +82,18 @@ color:rgb(255,255,255);
 	
 }
 
+#section1b {
+	padding-top:27vh;
+	height:100vh;
+	text-align: center;
+	background-color: #43270E;
+	
+}
+
 .coffeeImg{
 	cursor: pointer;
 	margin: 12px;
-	padding: 20px 0px;
+	/*padding: 10px 0px;*/
 }
 
 
@@ -171,12 +182,22 @@ border-style: solid;
 
 #yesnoHolder{
 	display: inline-block;
-	width: 600px;
-	height: 100px;
+	/*width: 600px;*/
+	height: 140px;
 	margin:auto;
 
 /*padding:20px;*/
 }
+
+#noHolder{
+	display: inline-block;
+	/*width: 600px;*/
+	height: 140px;
+	margin:auto;
+
+padding-top: 40px;
+} 
+
 
 p.yesorno{
 	display: inline-block;
@@ -251,7 +272,6 @@ p.coffeeFact{
 }
 
 #section3c {
-
 	padding-top:160px;
 	height:100%;
 	padding-bottom: 200px;
@@ -269,8 +289,8 @@ p.coffeeFact{
 #whereBuyCoffee{
 	display:inline-block;
 	text-align: center;
-	width:180px;
-	height:200px;
+	width:120px;
+	height:160px;
 	margin: 10px
 
 }
@@ -278,43 +298,80 @@ p.coffeeFact{
 
 .pplPerShops{
 	display:inline-block;
-	background-image: url("img/circle_200_.png");
-    background-repeat: no-repeat;
-    background-color: transparent;
-/*    background-position: right top;
-    background-attachment: fixed;*/
 	text-align: center;
-	width:200px;
-	height:200px;
-	margin: 10px
+	line-height: 25px;
+	padding-top: 23px;
+	/*padding-top: 20px;*/
+	width:100px;
+	height:100px;
+	border-radius: 50%;
+	background-color:#362212;
+	border: none;
 }
 
 .number-size{
 	font-size: 28pt;
 	font-style: bold;
 }
+
 .number-size2{
 	font-size: 30pt;
 	font-style: bold;
 }
 
-p.sm{
+.number-size3{
+	display:inline-block;
+	/*position:absolute;*/
+	font-size: 28pt;
+	font-style: bold;
+}
 
+p.sm{
+	display:inline-block;
+/*position:absolute;*/
 font-family: "Raleway", arial;
-	font-size:10pt;
+	font-size:9pt;
 	text-transform: uppercase;
 	font-weight: lighter;
 	letter-spacing: 3px;
-	line-height: 0.6em;
 }
 
+.shopName{
+	display:inline-block;
+	/*width:180px;*/
+	position: relative;
+	height: 40px;
+	margin-top:10px;
+	font-family: "Raleway", arial;
+	font-size:11pt;
+	text-transform: uppercase;
+	font-weight: lighter;
+	letter-spacing: 2px;
+	line-height: 1em;'
+}
+
+#yesnoHolder2{
+	display: inline-block;
+	margin-top: 30px;
+	height: 200px;
+}
 
 .yesnoAnswer{
 	display:inline-block;
-	width: 200px;
-	height: 250px;
-	margin: 30px;
+
+/*	width: 150px;*/
+
 }
+
+.noAnswer{
+	display:inline-block;
+/*	margin-top: 40px;
+	padding-top: 80px;
+/*	width: 150px;*/
+	height: 180px;
+}
+
+
 
 button.howto{
 color: white;
@@ -324,5 +381,22 @@ width: 280px;
 height: 40px;
 font-size: 12px;
 letter-spacing: 3px;
+}
+
+.lineA{
+display: inline-block;
+margin-top:30px;
+width:110px;
+height:1px;
+background-color: white;
+/*transform: rotate(320deg);*/
+}
+
+.lineb{
+display: inline-block;
+width:220px;
+height:1px;
+background-color: white;
+transform: rotate(320deg);
 }
 

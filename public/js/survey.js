@@ -134,8 +134,8 @@ function getRecycleQuery(event){
 
 function getRecycleQueryb(event){
   console.log(event.target.dataset.value3);
-  if(event.target.dataset.value3b == 'yes') knowRecycleQuery = true; 
-  if(event.target.dataset.value3b == 'no') knowRecycleQuery = false; 
+  if(event.target.dataset.value3 == 'yes') knowRecycleQuery = true; 
+  if(event.target.dataset.value3 == 'no') knowRecycleQuery = false; 
 }
 
 // $("#cupsHolder input").change(cupsPerWeek);
@@ -157,7 +157,7 @@ function submitData(){
     data : {
       cupsPerWeek : cupsPerWeek,
       coffeeShop : coffeeShop,
-      knowRecycleQuery : knowRecycleQuery
+      knowRecycleQuery : knowRecycleQuery,
     },
     success : function(response){
       // success
